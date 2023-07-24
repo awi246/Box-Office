@@ -1,6 +1,19 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+
 const Home = () =>{
-    return<div>hii this is home page</div>
+    const [inputValue ,setInputValue] = useState("");
+    console.log(inputValue);
+    const onInputChang = (ev) =>{
+        setInputValue(ev.target.value);
+    }
     
+    return <div>
+        <div>{inputValue}</div>
+        <button onClick={()=>{
+            setInputValue("awiral")
+        }}>click me to change</button>
+        <input type="text" value={inputValue} onChange={onInputChang} />
+        
+    </div>
 };
 export default Home;
